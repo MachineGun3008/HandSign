@@ -17,15 +17,37 @@ class Number:
                 # list_path = list_path + self.FromTextToNonNegativeCompleteNumber(num)
                 # list_path = list_path + self.FromTextToNonNegativeCompleteNumber(num % i)
 
-        if num < 20:
+        if 0 < num < 20:
             return list_path + [self.path + str(num)]
-        if num < 100:
+        if 0 < num < 100:
             return list_path + [self.path + str(num // 10), self.path + str(num % 10)]       
         return list_path
     def FromTextToUncompleteNumber(self, num):
-        list_path = ['' for i in range(len(num))]
-        for digit in num:
-            list_path.append(self.path + digit)
+        # print(num)
+        # list_path = ['' for i in range(len(num))]
+        list_path = []
+        for i in range(len(num)):
+            list_path.append(self.path + num[i])
+        return list_path
+
+    def FromTextToNumber(self, num):
+        list_path = []
+        start = 0
+        if num[0] == '-':
+            list_path.append(self.path + '-')
+            start = 1
+
+        end = start
+        while end < len(num) and num[end] != '.':
+            end += 1
+
+        if end - start < 11:
+            list_path = list_path + self.FromTextToNonNegativeCompleteNumber(int(num[start : end]))
+
+        if end != len(num) and num[end] == '.':
+            list_path.append('number\\dot')
+            list_path = list_path + self.FromTextToUncompleteNumber(num[end + 1 : len(num)])
+
         return list_path
 
 # a = Number()
