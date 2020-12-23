@@ -24,7 +24,7 @@ class Sentence:
         for pair in tags:
             # list_path.append(self.path + pair[1] + '\\' + pair[0].lower())
             if pair[1] != 'NUM':
-                link = self.path + 'words\\' + pair[1] + '\\' + pair[0].lower() + '.mp4'
+                link = 'words\\' + pair[1] + '\\' + pair[0].lower() + '.mp4'
                 if os.path.isfile(link):
                     list_path.append(link)
                 else:
@@ -33,5 +33,5 @@ class Sentence:
                 list_path = list_path + num.FromTextToNumber(pair[0])
         return list_path
 
-t = Sentence()
-print(t.FromTextToVid('I love you'))
+# t = Sentence()
+# print(t.FromTextToVid('I love you'))

@@ -1,6 +1,6 @@
 class Symbol:
     def __init__(self):
-        self.path = 'data\\symbol\\'
+        self.path = 'symbol\\'
     
     def FromTextToSymbol(self, text):
         list_path = []

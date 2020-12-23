@@ -1,11 +1,12 @@
 import cv2
+# from Sentence import Sentence
 class VideoStream:
 	def __init__(self):
 		self.prefix = 'data\\'
-		self.suffix = '.mp4'
+		# self.suffix = '.mp4'
 	def DisplayVideo(self, paths):
 		for path in paths:
-			cap = cv2.VideoCapture(self.prefix + path + self.suffix)
+			cap = cv2.VideoCapture(self.prefix + path)
 			if not cap.isOpened():
 				print('Can not open {0}'.format(path))
 				continue
