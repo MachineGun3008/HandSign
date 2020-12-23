@@ -1,7 +1,7 @@
 class Number:
     def __init__(self):
         # self.text = text
-        self.path = 'number\\'
+        self.path = 'data\\number\\'
     def FromTextToNonNegativeCompleteNumber(self, num):
         if num < 20:
             return [self.path + str(num) + '.mp4']
@@ -18,8 +18,8 @@ class Number:
                 # list_path = list_path + self.FromTextToNonNegativeCompleteNumber(num % i)
 
         if 0 < num < 20:
-            return list_path.append(self.path + str(num) + '.mp4')
-        if 0 < num < 100:
+            list_path.append(self.path + str(num) + '.mp4')
+        elif 0 < num < 100:
             return list_path + [self.path + str(num // 10) + '.mp4', self.path + str(num % 10) + '.mp4']       
         return list_path
     def FromTextToUncompleteNumber(self, num):
@@ -45,7 +45,7 @@ class Number:
             list_path = list_path + self.FromTextToNonNegativeCompleteNumber(int(num[start : end]))
 
         if end != len(num) and num[end] == '.':
-            list_path.append('number\\dot.mp4')
+            list_path.append('data\\number\\dot.mp4')
             list_path = list_path + self.FromTextToUncompleteNumber(num[end + 1 : len(num)])
 
         return list_path

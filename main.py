@@ -9,7 +9,8 @@ import os
 # paths = a.FromTextToNumber('-100.02')
 # print(paths)
 a = Sentence()
-paths = a.FromTextToVid('I am going to school')
+paths = a.FromTextToVid('I have a family')
+# print(paths)
 vd = VideoStream()
 vd.DisplayVideo(paths)
 # paths = ['number\\dot']

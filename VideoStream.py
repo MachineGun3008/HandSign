@@ -6,7 +6,7 @@ class VideoStream:
 		# self.suffix = '.mp4'
 	def DisplayVideo(self, paths):
 		for path in paths:
-			cap = cv2.VideoCapture(self.prefix + path)
+			cap = cv2.VideoCapture(path)
 			if not cap.isOpened():
 				print('Can not open {0}'.format(path))
 				continue
