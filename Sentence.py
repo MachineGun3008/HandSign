@@ -34,6 +34,6 @@ class Sentence:
                 list_path = list_path + num.FromTextToNumber(pair[0])
         return list_path
 
-t = Sentence()
-print(t.FromTextToVid('I have a family'))
+# t = Sentence()
+# print(t.FromTextToVid('I have a family'))
 # print(os.path.isfile('data\\words\\PRON\\i.mp4'))
