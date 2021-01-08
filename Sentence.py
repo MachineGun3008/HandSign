@@ -2,8 +2,10 @@ import nltk
 from Number import Number
 from Symbol import Symbol
 import os
-# nltk.download('averaged_perceptron_tagger')
-# nltk.download('universal_tagset')
+# nltk.download('punkt')
+
+nltk.download('averaged_perceptron_tagger')
+nltk.download('universal_tagset')
 # import Number from Number
 class Sentence:
     def __init__(self):

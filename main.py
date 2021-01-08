@@ -6,6 +6,7 @@ from Sentence import Sentence
 from CommonSentence import CommonSentence
 import os
 
+
 # a = Number()
 # paths = a.FromTextToNumber('-100.02')
 # print(paths)
@@ -18,8 +19,27 @@ import os
 # vd = VideoStream()
 # vd.DisplayVideo(paths)
 # print(os.path.isfile('data\\words\\PRON\\i.mp4'))
-a = CommonSentence()
-paths = a.FindPath('Nice to meet you')
-print(paths)
+
+text = 'I have 20 cent'
+
+CS = CommonSentence()
+S = Sentence()
+N = Number()
 vd = VideoStream()
-vd.DisplayVideo(paths)
+
+paths = CS.FindPath(text)
+
+if paths != None:
+	print(paths)
+	vd.DisplayVideo(paths)
+else:
+	paths = S.FromTextToVid(text)
+	print(paths)
+	vd.DisplayVideo(paths)
+
+
+# a = CommonSentence()
+# paths = a.FindPath('Nice to meet you')
+# print(paths)
+# vd = VideoStream()
+# vd.DisplayVideo(paths)

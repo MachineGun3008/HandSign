@@ -15,6 +15,8 @@ def get_text():
     v = entry.get()
     label = tk.Label(root, text = v)
     canvas.create_window(100, 150, window = label)
+
+    
     
 
 
