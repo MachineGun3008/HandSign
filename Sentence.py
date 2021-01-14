@@ -4,8 +4,8 @@ from Symbol import Symbol
 import os
 # nltk.download('punkt')
 
-nltk.download('averaged_perceptron_tagger')
-nltk.download('universal_tagset')
+# nltk.download('averaged_perceptron_tagger')
+# nltk.download('universal_tagset')
 # import Number from Number
 class Sentence:
     def __init__(self):
@@ -33,9 +33,10 @@ class Sentence:
                 else:
                     list_path = list_path + sym.FromTextToSymbol(pair[0].lower())
             else:
+                print(pair[0])
                 list_path = list_path + num.FromTextToNumber(pair[0])
         return list_path
 
-# t = Sentence()
-# print(t.FromTextToVid('I have a family'))
+t = Sentence()
+#print(t.FromTextToVid('I have 20 cent'))
 # print(os.path.isfile('data\\words\\PRON\\i.mp4'))
