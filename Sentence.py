@@ -19,7 +19,8 @@ class Sentence:
         # tokenizer = nltk.RegexpTokenizer(r"\w+")
         # words = tokenizer.tokenize(text)
         tags = nltk.tag.pos_tag(nltk.tokenize.word_tokenize(text), tagset= 'universal')
-        
+        print(tags)
+
         num = Number()
         sym = Symbol()
         list_path = []
@@ -34,9 +35,14 @@ class Sentence:
                     list_path = list_path + sym.FromTextToSymbol(pair[0].lower())
             else:
                 print(pair[0])
-                list_path = list_path + num.FromTextToNumber(pair[0])
+                try:  
+                    list_path = list_path + num.FromTextToNumber(pair[0])
+                except:
+                    list_path = list_path + sym.FromTextToSymbol(pair[0].lower())
         return list_path
 
-t = Sentence()
-#print(t.FromTextToVid('I have 20 cent'))
+# print(nltk.tag.pos_tag(nltk.tokenize.word_tokenize('I have 100 houses'), tagset = 'universal'))
+
+# t = Sentence()
+# print(t.FromTextToVid('Today is 11/20/2020'))
 # print(os.path.isfile('data\\words\\PRON\\i.mp4'))
